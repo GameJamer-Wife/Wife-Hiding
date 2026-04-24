@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class StockMarketHandler : MonoBehaviour
 {
-    public TextMeshProUGUI[] stockMarketTextValue;
+    public TextMeshProUGUI[] stockMarketMultiplier;
     public TMP_InputField[] stockMarketBuyInput;
+    public TextMeshProUGUI[] stockMarketSellValue;
 
     public TextMeshProUGUI totalMoneyText;
     public float timer = 3f;
@@ -23,7 +24,7 @@ public class StockMarketHandler : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            stockMarketTextValue[0].text = Random.Range(minMultiplier, maxMultiplier).ToString();
+            stockMarketMultiplier[0].text = Random.Range(minMultiplier, maxMultiplier).ToString();
             timer = resetTimer;
         }
     }
@@ -35,13 +36,16 @@ public class StockMarketHandler : MonoBehaviour
         {
             float subtraction = float.Parse(totalMoneyText.text) - valueToBuy;
             totalMoneyText.text = subtraction.ToString();
+            float addition = float.Parse(stockMarketSellValue[index].text) + valueToBuy;
+            stockMarketSellValue[index].text = addition.ToString();
         }
     }
 
     public void SellStockMarket(int index)
     {
-        var text = stockMarketTextValue[index].text;
-        float value = float.Parse(text);
-        totalMoneyText.text = totalMoneyText + value.ToString();
+        float multi = float.Parse(stockMarketMultiplier[index].text);
+        float value = float.Parse(stockMarketSellValue[index].text);
+        totalMoneyText.text = value * multi + value.ToString();
+        stockMarketSellValue[index].text = "0";
     }
 }

@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 69616101}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 548465409}
+        m_TargetAssemblyTypeName: StockMarketHandler, Assembly-CSharp
+        m_MethodName: SellStockMarket
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &69616101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,10 +498,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5045a4eeb2a7c4408625e8db5376925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stockMarketTextValue:
+  stockMarketMultiplier:
   - {fileID: 1525297243}
   stockMarketBuyInput:
   - {fileID: 1294580480}
+  stockMarketSellValue:
+  - {fileID: 1724469135}
   totalMoneyText: {fileID: 745740704}
   timer: 5
   minMultiplier: 0.25
@@ -1381,7 +1395,7 @@ GameObject:
   - component: {fileID: 981502548}
   - component: {fileID: 981502547}
   m_Layer: 5
-  m_Name: StockTitle (1)
+  m_Name: YourValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2021,7 +2035,7 @@ GameObject:
   - component: {fileID: 1525297244}
   - component: {fileID: 1525297243}
   m_Layer: 5
-  m_Name: Value
+  m_Name: Multiplier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
