@@ -1,3 +1,4 @@
+using System;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
@@ -47,7 +48,8 @@ namespace Stock_Market
         {
             for (int i  = 0; i < stockMarketMultiplier.Length; i++)
             {
-                stockMarketMultiplier[i].text = Random.Range(minMultiplier, maxMultiplier).ToString(CultureInfo.InvariantCulture);
+                var randomize = Mathf.Round(Random.Range(minMultiplier, maxMultiplier) * 100.0f) * 0.01f;
+                stockMarketMultiplier[i].text = randomize.ToString(CultureInfo.InvariantCulture);
                 var multiplier = float.Parse(stockMarketSellValue[i].text) * float.Parse(stockMarketMultiplier[i].text);
                 stockMarketSellValue[i].text = multiplier.ToString(CultureInfo.InvariantCulture);
                 _stockChanged[i] = true;
