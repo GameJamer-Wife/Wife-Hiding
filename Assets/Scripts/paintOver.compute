@@ -10,10 +10,10 @@ float4 paint;
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    if(base[id.xy].x==paint.x && base[id.xy].y==paint.y && base[id.xy].z==paint.z)
+    if(/*base[id.xy].x==paint.x && base[id.xy].y==paint.y && base[id.xy].z==paint.z*/distance((float3)base[id.xy],(float3)paint)<0.2f)
     {
         float dist = distance(id.xy,(float2)brush);
-        if(10>dist)
+        if(50>dist)
         {
             Result[id.xy]=base[id.xy];
         }
