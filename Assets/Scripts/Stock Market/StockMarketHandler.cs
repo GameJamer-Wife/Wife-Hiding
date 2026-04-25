@@ -18,8 +18,12 @@ public class StockMarketHandler : MonoBehaviour
     [SerializeField] private float minMultiplier;
     [SerializeField] private float maxMultiplier;
     
+    [Header("Sound effects")]
+    private AudioSource soundEffectSource;
+    
     private void Start()
     {
+        soundEffectSource = GetComponent<AudioSource>();
         resetTimer = timer;
     }
     // Update is called once per frame
@@ -28,9 +32,18 @@ public class StockMarketHandler : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            stockMarketMultiplier[0].text = Random.Range(minMultiplier, maxMultiplier).ToString();
-            stockMarketMultiplier[1].text = Random.Range(minMultiplier, maxMultiplier).ToString();
             timer = resetTimer;
+            UpdateStocks();
+        }
+    }
+
+    public void UpdateStocks()
+    {
+        for (int i  = 0; i < stockMarketMultiplier.Length; i++)
+        {
+            stockMarketMultiplier[i].text = Random.Range(minMultiplier, maxMultiplier).ToString();
+            float multiplier = float.Parse(stockMarketSellValue[i].text) * float.Parse(stockMarketMultiplier[i].text);
+            stockMarketSellValue[i].text = multiplier.ToString();
         }
     }
 
@@ -55,6 +68,7 @@ public class StockMarketHandler : MonoBehaviour
             float result = (value * multi) + float.Parse(totalMoneyText.text);
             totalMoneyText.text = result.ToString();
             stockMarketSellValue[index].text = "0";
+            soundEffectSource.Play();
         }
     }
 }
