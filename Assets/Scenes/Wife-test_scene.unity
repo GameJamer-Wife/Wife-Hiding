@@ -555,18 +555,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d530437986642215b899600959dcc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wifeMaxMoveDistance: 50
+  wifeImage: {fileID: 2041611560}
+  wifeSpawnPoints:
+  - {fileID: 1703665034}
+  - {fileID: 1301128613}
+  currentWifeState: 0
+  wifeMaxMoveDistance: 130
   wifeMoveSmoothTime: 0.2
   wifeWaitTime: 3
   timeUntilWife: 0
-  _wifeImage: {fileID: 2041611560}
-  _wifeSpawnPoints:
-  - {fileID: 1703665034}
-  - {fileID: 1301128613}
-  _currentWifeSpawnPoint: {fileID: 0}
-  _wifeIsLeaving: 0
-  _currentWifeState: 0
-  _wanderCooldown: 2
+  wifeIsAwake: 0
+  wanderCooldown: 2
   maxWanderDistance: 20
 --- !u!1 &901738227
 GameObject:
