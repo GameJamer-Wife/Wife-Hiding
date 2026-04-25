@@ -1,0 +1,20 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+RWTexture2D<float4> base;
+vector brush;
+float4 paint;
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    if(base[id.xy].x==paint.x && base[id.xy].y==paint.y && base[id.xy].z==paint.z)
+    {
+        if(/*distance check*/true)
+        {
+            Result[id.xy]=base[id.xy];
+        }
+    }
+}

@@ -58,25 +58,63 @@ public class Knit : SneakyMinigame
     private void checkProgress()
     {
          
-        if (directions[progress] == 0 && (Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.sKey.wasPressedThisFrame))
+        if ((Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.sKey.wasPressedThisFrame))
         {
-            progress++;
-            return;
+            if (directions[progress] == 0)
+            {
+                progress++;
+                return;
+            }
+            else
+            {
+                punishment();
+                return;
+            }
         }
-        if (directions[progress] == 1 && (Keyboard.current.rightArrowKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame))
+        if ((Keyboard.current.rightArrowKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame))
         {
-            progress++;
-            return;
+            if (directions[progress] == 1)
+            {
+                progress++;
+                return;
+            }
+            else
+            {
+                punishment();
+                return;
+            }
         }
-        if (directions[progress] == 2 && (Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.wKey.wasPressedThisFrame))
+        if ((Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.wKey.wasPressedThisFrame))
         {
-            progress++;
-            return;
+            if (directions[progress] == 2)
+            {
+                progress++;
+                return;
+            }
+            else
+            {
+                punishment();
+                return;
+            }
         }
-        if (directions[progress] == 3 && (Keyboard.current.leftArrowKey.wasPressedThisFrame || Keyboard.current.aKey.wasPressedThisFrame))
+        if ((Keyboard.current.leftArrowKey.wasPressedThisFrame || Keyboard.current.aKey.wasPressedThisFrame))
         {
-            progress++;
-            return;
+            if (directions[progress] == 3)
+            {
+                progress++;
+                return;
+            }
+            else
+            {
+                punishment();
+                return;
+            }
         }
+    }
+
+    private void punishment()
+    {
+        if (progress == 0) return;
+        progress--;
     }
 }
