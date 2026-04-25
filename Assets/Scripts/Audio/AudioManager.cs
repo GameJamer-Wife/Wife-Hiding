@@ -46,6 +46,15 @@ namespace Audio
             return _instance != null ? _instance.soundVolume : 1f;
         }
         
+        
+        public static void ButtonPlaySound(AudioClip clip)
+        {
+            if (_instance == null) return;
+            
+            if (Camera.main != null) 
+                AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, _instance.soundVolume);
+        }
+        
         public static float PlaySound(AudioClip clip) {
             if (_instance == null) return 0f;
 
@@ -67,7 +76,7 @@ namespace Audio
         }
         
         
-        public static void PlayYMusic(AudioClip clip)
+        public static void PlayMusic(AudioClip clip)
         {
             if (_instance == null || _instance.musicSource == null) return;
             
