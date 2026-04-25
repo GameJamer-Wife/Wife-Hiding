@@ -3010,6 +3010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5045a4eeb2a7c4408625e8db5376925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: If these are empty, when adding elements, be sure that the stock prefab
+    references all are in the same order. Otherwise it will mess up.
   stockMarketMultiplier:
   - {fileID: 3008100885965566458}
   - {fileID: 5634555174157986257}

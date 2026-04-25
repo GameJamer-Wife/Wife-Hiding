@@ -3,20 +3,21 @@ using UnityEngine;
 
 public class StockMarketHandler : MonoBehaviour
 {
+    [SerializeField][TextArea] protected string description;
     [Header("Stock Market References")]
-    [Tooltip("Point it to object named 'multiplier'.")]public TextMeshProUGUI[] stockMarketMultiplier;
-    [Tooltip("Point it to object named 'Amount to buy'")]public TMP_InputField[] stockMarketBuyInput;
-    [Tooltip("Point it to object named 'Value'")]public TextMeshProUGUI[] stockMarketSellValue;
+    [Tooltip("Point it to object named 'multiplier'.")][SerializeField] private TextMeshProUGUI[] stockMarketMultiplier;
+    [Tooltip("Point it to object named 'Amount to buy'")][SerializeField] private TMP_InputField[] stockMarketBuyInput;
+    [Tooltip("Point it to object named 'Value'")][SerializeField] private TextMeshProUGUI[] stockMarketSellValue;
 
-    [Tooltip("Do not change this!")]public TextMeshProUGUI totalMoneyText;
+    [Tooltip("Do not change this!")][SerializeField] private TextMeshProUGUI totalMoneyText;
     [Header("Timer")]
-    public float timer = 3f;
+    [SerializeField] private float timer = 3f;
     private float resetTimer;
 
     [Header("Multiplier settings")]
-    public float minMultiplier;
-    public float maxMultiplier;
-
+    [SerializeField] private float minMultiplier;
+    [SerializeField] private float maxMultiplier;
+    
     private void Start()
     {
         resetTimer = timer;
