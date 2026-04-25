@@ -526,6 +526,14 @@ PrefabInstance:
       value: StockMarketFinal-ish
       objectReference: {fileID: 0}
     - target: {fileID: 2208952388461591081, guid: 2c07f3b905608924fa88f953e86ccfd4, type: 3}
+      propertyPath: description
+      value: 'If these are empty, when adding elements, be sure that the stock prefab
+        references all are in the same order. Otherwise it will mess up.
+
+        Also
+        remember to check so the buttons point to the right place, OnClick().'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208952388461591081, guid: 2c07f3b905608924fa88f953e86ccfd4, type: 3}
       propertyPath: soundEffects.Array.size
       value: 1
       objectReference: {fileID: 0}

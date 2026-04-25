@@ -1,5 +1,9 @@
+using System;
+using NUnit.Framework.Constraints;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class StockMarketHandler : MonoBehaviour
 {
@@ -24,6 +28,7 @@ public class StockMarketHandler : MonoBehaviour
     private void Start()
     {
         soundEffectSource = GetComponent<AudioSource>();
+        UpdateStocks();
         resetTimer = timer;
     }
     // Update is called once per frame
@@ -42,30 +47,29 @@ public class StockMarketHandler : MonoBehaviour
         for (int i  = 0; i < stockMarketMultiplier.Length; i++)
         {
             stockMarketMultiplier[i].text = Random.Range(minMultiplier, maxMultiplier).ToString();
-            float multiplier = float.Parse(stockMarketSellValue[i].text) * float.Parse(stockMarketMultiplier[i].text);
+            var multiplier = float.Parse(stockMarketSellValue[i].text) * float.Parse(stockMarketMultiplier[i].text);
             stockMarketSellValue[i].text = multiplier.ToString();
         }
     }
 
     public void BuyStockMarket(int index)
     {
-        float valueToBuy = float.Parse(stockMarketBuyInput[index].text);
-        if (valueToBuy <= float.Parse(totalMoneyText.text))
-        {
-            float subtraction = float.Parse(totalMoneyText.text) - valueToBuy;
+        if (!stockMarketBuyInput[index].text.Equals("") && float.Parse(stockMarketBuyInput[index].text) <= float.Parse(totalMoneyText.text)) {
+            var valueToBuy = float.Parse(stockMarketBuyInput[index].text);
+            var subtraction = float.Parse(totalMoneyText.text) - valueToBuy;
             totalMoneyText.text = subtraction.ToString();
-            float addition = float.Parse(stockMarketSellValue[index].text) + valueToBuy;
+            var addition = float.Parse(stockMarketSellValue[index].text) + valueToBuy;
             stockMarketSellValue[index].text = addition.ToString();
         }
     }
 
     public void SellStockMarket(int index)
     {
-        if (!stockMarketSellValue[index].text.Equals("0"))
+        if (!stockMarketSellValue[index].text.Equals("0") && !stockMarketBuyInput[index].text.Equals(""))
         {
-            float multi = float.Parse(stockMarketMultiplier[index].text);
-            float value = float.Parse(stockMarketSellValue[index].text);
-            float result = (value * multi) + float.Parse(totalMoneyText.text);
+            var multi = float.Parse(stockMarketMultiplier[index].text);
+            var value = float.Parse(stockMarketSellValue[index].text);
+            var result = (value * multi) + float.Parse(totalMoneyText.text);
             totalMoneyText.text = result.ToString();
             stockMarketSellValue[index].text = "0";
             soundEffectSource.Play();
