@@ -17,6 +17,7 @@ public class StockMarketHandler : MonoBehaviour
     [Header("Timer")]
     [SerializeField] private float timer = 3f;
     private float resetTimer;
+    private bool[] stockChanged = new bool[10];
 
     [Header("Multiplier settings")]
     [SerializeField] private float minMultiplier;
@@ -49,6 +50,8 @@ public class StockMarketHandler : MonoBehaviour
             stockMarketMultiplier[i].text = Random.Range(minMultiplier, maxMultiplier).ToString();
             var multiplier = float.Parse(stockMarketSellValue[i].text) * float.Parse(stockMarketMultiplier[i].text);
             stockMarketSellValue[i].text = multiplier.ToString();
+            stockChanged[i] = true;
+            stockMarketSellValue[i].color = Color.green;
         }
     }
 
@@ -60,12 +63,14 @@ public class StockMarketHandler : MonoBehaviour
             totalMoneyText.text = subtraction.ToString();
             var addition = float.Parse(stockMarketSellValue[index].text) + valueToBuy;
             stockMarketSellValue[index].text = addition.ToString();
+            stockChanged[index] = false;
+            stockMarketSellValue[index].color = Color.red;
         }
     }
 
     public void SellStockMarket(int index)
     {
-        if (!stockMarketSellValue[index].text.Equals("0") && !stockMarketBuyInput[index].text.Equals(""))
+        if (!stockMarketSellValue[index].text.Equals("0") && !stockMarketBuyInput[index].text.Equals("") && stockChanged[index])
         {
             var multi = float.Parse(stockMarketMultiplier[index].text);
             var value = float.Parse(stockMarketSellValue[index].text);
