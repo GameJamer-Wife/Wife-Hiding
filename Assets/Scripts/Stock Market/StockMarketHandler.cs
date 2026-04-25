@@ -18,8 +18,12 @@ public class StockMarketHandler : MonoBehaviour
     [SerializeField] private float minMultiplier;
     [SerializeField] private float maxMultiplier;
     
+    [Header("Sound effects")]
+    private AudioSource soundEffectSource;
+    
     private void Start()
     {
+        soundEffectSource = GetComponent<AudioSource>();
         resetTimer = timer;
     }
     // Update is called once per frame
@@ -64,6 +68,7 @@ public class StockMarketHandler : MonoBehaviour
             float result = (value * multi) + float.Parse(totalMoneyText.text);
             totalMoneyText.text = result.ToString();
             stockMarketSellValue[index].text = "0";
+            soundEffectSource.Play();
         }
     }
 }
