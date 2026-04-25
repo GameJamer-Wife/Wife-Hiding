@@ -4,8 +4,10 @@ using UnityEngine.SceneManagement;
 
 namespace MainScreen
 {
+
     public class GameOverShowScript : MonoBehaviour
     {
+        
         [SerializeField] private GameObject gameOverObject;
         [SerializeField] private TMPro.TextMeshProUGUI gameOverHeader;
         [SerializeField] private TMPro.TextMeshProUGUI gameOverText;
@@ -14,8 +16,13 @@ namespace MainScreen
         {
             var scene = SceneManager.GetActiveScene(); 
             SceneManager.LoadScene(scene.name);
-
         }
         
+        public void ShowGameOver(string header, string text)
+        {
+            gameOverHeader.text = header;
+            gameOverText.text = text;
+            gameOverObject.SetActive(true);
+        }
     }
 }
