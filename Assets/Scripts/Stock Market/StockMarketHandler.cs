@@ -28,9 +28,16 @@ public class StockMarketHandler : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            stockMarketMultiplier[0].text = Random.Range(minMultiplier, maxMultiplier).ToString();
-            stockMarketMultiplier[1].text = Random.Range(minMultiplier, maxMultiplier).ToString();
             timer = resetTimer;
+            UpdateStocks();
+        }
+    }
+
+    public void UpdateStocks()
+    {
+        for (int i  = 0; i < stockMarketMultiplier.Length; i++)
+        {
+            stockMarketMultiplier[i].text = Random.Range(minMultiplier, maxMultiplier).ToString();
         }
     }
 
