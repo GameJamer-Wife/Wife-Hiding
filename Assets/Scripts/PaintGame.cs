@@ -1,9 +1,12 @@
 using System;
+using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
-public class PaintGame : MonoBehaviour
+public class PaintGame : SneakyMinigame
 {
     [SerializeField]
     private ComputeShader PainterShader;
@@ -49,7 +52,8 @@ public class PaintGame : MonoBehaviour
         guide -= new Vector2(-120, -120);
         Run(guide);
         //checkColor();
-        if(dots==0)WinCode();
+        checkingColorDots();
+        if(dots==0)EndMinigame();
     }
 
     public void Run(Vector2 place)
@@ -96,8 +100,17 @@ public class PaintGame : MonoBehaviour
         paint = color;
     }
 
-    private void WinCode()
+    private void checkingColorDots()
     {
-        gameObject.SetActive(false);
+        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+        pointerEventData.position = Input.mousePosition;
+        List<RaycastResult> rayHits = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerEventData,rayHits);
+        for (int i = 0; i < rayHits.Count; i++)
+        {
+
+            if(rayHits[i].gameObject.TryGetComponent(out coldot cd))cd.OnPointerEnter();
+        }
+    
     }
 }

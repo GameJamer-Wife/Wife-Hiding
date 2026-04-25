@@ -15,4 +15,10 @@ public class SneakyMinigame : MonoBehaviour
     {
         DoingSecretStuff = false;
     }
+
+    protected void EndMinigame()
+    {
+            Destroy(gameObject);
+            DoingSecretStuff = false;
+    }
 }

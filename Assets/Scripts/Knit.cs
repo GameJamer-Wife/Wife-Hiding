@@ -31,8 +31,7 @@ public class Knit : SneakyMinigame
     {
         if (progress >= times)
         {
-            Destroy(gameObject);
-            DoingSecretStuff = false;
+            EndMinigame();
             return;
         }
         checkProgress();
