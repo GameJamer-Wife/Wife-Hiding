@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class PaintGame : MonoBehaviour
@@ -10,14 +11,23 @@ public class PaintGame : MonoBehaviour
     private ComputeShader TemplateShader;
 
     [SerializeField] private RawImage disp;
-    [SerializeField] private RenderTexture writeTex;
+    [SerializeField] private Texture writeTex;
     [SerializeField] private Texture2D referenceTex;
-    public Color paint;
+    public static Color paint;
+    public Color paintPublic;
 
     [SerializeField] private Vector2 guide=Vector2.zero;
     [SerializeField] private Camera cam;
     [SerializeField]
     private RectTransform rect;
+
+    public static int dots = 0;
+
+    private void Awake()
+    {
+        dots = 0;
+    }
+
     private void Start()
     {
         //disp = GetComponent<RawImage>();
@@ -34,10 +44,12 @@ public class PaintGame : MonoBehaviour
 
     private void Update()
     {
+        paintPublic = paint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, Input.mousePosition, cam, out guide);
         guide -= new Vector2(-120, -120);
         Run(guide);
-        checkColor();
+        //checkColor();
+        if(dots==0)WinCode();
     }
 
     public void Run(Vector2 place)
@@ -76,5 +88,16 @@ public class PaintGame : MonoBehaviour
         float cor = t / cls.Length;
         Debug.Log(cor);
         if(cor>0.5f)Debug.Log("sdfghi");
+       
+    }
+
+    public void setColor(Color color)
+    {
+        paint = color;
+    }
+
+    private void WinCode()
+    {
+        gameObject.SetActive(false);
     }
 }

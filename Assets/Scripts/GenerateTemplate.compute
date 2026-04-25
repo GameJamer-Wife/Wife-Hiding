@@ -7,5 +7,5 @@ Texture2D<float4> base;
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    Result[id.xy] = float4((1+base[id.xy].r)/3,(1+base[id.xy].g)/3,(1+base[id.xy].b)/3,1);
+    Result[id.xy] = float4((2+base[id.xy].r)/3,(2+base[id.xy].g)/3,(2+base[id.xy].b)/3,1);
 }
