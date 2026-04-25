@@ -74,7 +74,7 @@ namespace Stock_Market
             {
                 var value = float.Parse(stockMarketSellValue[index].text);
                 var result = value + float.Parse(totalMoneyText.text);
-                totalMoneyText.text = result.ToString(CultureInfo.InvariantCulture);
+                totalMoneyText.text = Mathf.Round(result).ToString(CultureInfo.InvariantCulture);
                 stockMarketSellValue[index].text = "0";
                 _soundEffectSource.Play();
             }
