@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Knit : SneakyMinigame
 {
@@ -58,58 +57,28 @@ public class Knit : SneakyMinigame
     private void checkProgress()
     {
          
-        if ((Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.sKey.wasPressedThisFrame))
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && directions[progress] == 0)
         {
-            if (directions[progress] == 0)
-            {
-                progress++;
-                return;
-            }
-            else
-            {
-                punishment();
-                return;
-            }
+            progress++;
+            return;
         }
-        if ((Keyboard.current.rightArrowKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame))
+        if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && directions[progress] == 1)
         {
-            if (directions[progress] == 1)
-            {
-                progress++;
-                return;
-            }
-            else
-            {
-                punishment();
-                return;
-            }
+            progress++;
+            return;
         }
-        if ((Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.wKey.wasPressedThisFrame))
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))&& directions[progress] == 2)
         {
-            if (directions[progress] == 2)
-            {
-                progress++;
-                return;
-            }
-            else
-            {
-                punishment();
-                return;
-            }
+            progress++;
+            return;
         }
-        if ((Keyboard.current.leftArrowKey.wasPressedThisFrame || Keyboard.current.aKey.wasPressedThisFrame))
+        if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && directions[progress] == 3)
         {
-            if (directions[progress] == 3)
-            {
-                progress++;
-                return;
-            }
-            else
-            {
-                punishment();
-                return;
-            }
+            progress++;
+            return;
         }
+
+        if (Input.anyKeyDown) punishment();
     }
 
     private void punishment()
