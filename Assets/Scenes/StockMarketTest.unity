@@ -423,10 +423,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StockMarketFinal-ish
       objectReference: {fileID: 0}
-    - target: {fileID: 3040512540625986691, guid: 2c07f3b905608924fa88f953e86ccfd4, type: 3}
-      propertyPath: m_text
-      value: "\u200B"
-      objectReference: {fileID: 0}
     - target: {fileID: 3956222143860076960, guid: 2c07f3b905608924fa88f953e86ccfd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1022.6627

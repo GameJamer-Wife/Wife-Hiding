@@ -38,6 +38,8 @@ public class StockMarketHandler : MonoBehaviour
         for (int i  = 0; i < stockMarketMultiplier.Length; i++)
         {
             stockMarketMultiplier[i].text = Random.Range(minMultiplier, maxMultiplier).ToString();
+            float multiplier = float.Parse(stockMarketSellValue[i].text) * float.Parse(stockMarketMultiplier[i].text);
+            stockMarketSellValue[i].text = multiplier.ToString();
         }
     }
 
