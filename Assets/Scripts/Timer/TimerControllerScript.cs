@@ -21,12 +21,12 @@ namespace Timer
 
         [SerializeField] private float loweTimeThreshold = 25f;
         [SerializeField] private float beepEvery = 1f;
-        private float nextBeepTime;
 
         [Header("References")] [SerializeField]
         private TextMeshProUGUI timerText;
 
         private float _resetToTimer;
+        private float nextBeepTime;
 
 
         private void Start()
@@ -59,12 +59,12 @@ namespace Timer
             var ms = (int)((time - sec) * 100);
             return $"{m:00}:{s:00}.{ms:00}";
         }
-        
+
         private void SoundTimer()
         {
             if (!(timerDuration <= loweTimeThreshold)) return;
             if (timerDuration > nextBeepTime) return;
-            
+
             nextBeepTime = timerDuration - beepEvery;
             Debug.Log("Beep!");
             //timerAudioSource.PlayOneShot(loweTimeSound, loweTimeSoundVolume);

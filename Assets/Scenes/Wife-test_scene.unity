@@ -479,11 +479,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8050432674797805904, guid: e48f1a12c649b8b04be5da5d2f24c5d6, type: 3}
       propertyPath: enterRotation.w
-      value: -0.00000004371139
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8050432674797805904, guid: e48f1a12c649b8b04be5da5d2f24c5d6, type: 3}
       propertyPath: enterRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8050432674797805904, guid: e48f1a12c649b8b04be5da5d2f24c5d6, type: 3}
       propertyPath: targetRotation.w
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d530437986642215b899600959dcc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wifeMaxMoveDistance: 130
+  wifeMaxMoveDistance: 50
   wifeMoveSmoothTime: 0.2
   wifeWaitTime: 3
   timeUntilWife: 0
@@ -565,6 +565,9 @@ MonoBehaviour:
   - {fileID: 1301128613}
   _currentWifeSpawnPoint: {fileID: 0}
   _wifeIsLeaving: 0
+  _currentWifeState: 0
+  _wanderCooldown: 2
+  maxWanderDistance: 20
 --- !u!1 &901738227
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,8 +602,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.95410156, y: 0}
+  m_SizeDelta: {x: 0.212, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &901738229
 BoxCollider2D:
@@ -884,17 +887,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041611558}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 762557570}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 706.99927, y: -85}
-  m_SizeDelta: {x: 108.4955, y: 234.4059}
+  m_AnchoredPosition: {x: 875, y: -54}
+  m_SizeDelta: {x: 156.6117, y: 469.4664}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2041611560
 MonoBehaviour:
@@ -916,7 +919,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ddb004c2e0b10fec297ff4beb638c1a4, type: 3}
+  m_Texture: {fileID: 2800000, guid: d6165ccbc8725234a9e95145afb50c00, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1095,6 +1098,14 @@ PrefabInstance:
     - target: {fileID: 6653260102952268002, guid: e48f1a12c649b8b04be5da5d2f24c5d6, type: 3}
       propertyPath: m_Name
       value: Wife Path Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050432674797805904, guid: e48f1a12c649b8b04be5da5d2f24c5d6, type: 3}
+      propertyPath: enterRotation.w
+      value: -0.00000004371139
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050432674797805904, guid: e48f1a12c649b8b04be5da5d2f24c5d6, type: 3}
+      propertyPath: enterRotation.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9162899518633983799, guid: e48f1a12c649b8b04be5da5d2f24c5d6, type: 3}
       propertyPath: m_Icon
