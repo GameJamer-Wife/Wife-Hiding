@@ -72,9 +72,8 @@ public class StockMarketHandler : MonoBehaviour
     {
         if (!stockMarketSellValue[index].text.Equals("0") && !stockMarketBuyInput[index].text.Equals("") && stockChanged[index])
         {
-            var multi = float.Parse(stockMarketMultiplier[index].text);
             var value = float.Parse(stockMarketSellValue[index].text);
-            var result = (value * multi) + float.Parse(totalMoneyText.text);
+            var result = value + float.Parse(totalMoneyText.text);
             totalMoneyText.text = result.ToString();
             stockMarketSellValue[index].text = "0";
             soundEffectSource.Play();
