@@ -5895,7 +5895,7 @@ MonoBehaviour:
   - {fileID: 4422739447982343777}
   - {fileID: 7500334243914544410}
   totalMoneyText: {fileID: 1331709082853352157}
-  timer: 3
+  timer: 0.4
   minMultiplier: 0.1
   maxMultiplier: 2
 --- !u!1 &2712166746954917697

@@ -56,8 +56,8 @@ namespace Stock_Market
             {
                 var randomize = Mathf.Round(Random.Range(minMultiplier, maxMultiplier) * 100.0f) * 0.01f;
                 stockMarketMultiplier[i].text = randomize.ToString(CultureInfo.InvariantCulture);
-                var multiplier = float.Parse(stockMarketSellValue[i].text) * float.Parse(stockMarketMultiplier[i].text);
-                stockMarketSellValue[i].text = multiplier.ToString(CultureInfo.InvariantCulture);
+                /*var multiplier = float.Parse(stockMarketSellValue[i].text) * float.Parse(stockMarketMultiplier[i].text);
+                stockMarketSellValue[i].text = multiplier.ToString(CultureInfo.InvariantCulture);*/
                 _stockChanged[i] = true;
                 stockMarketSellValue[i].color = Color.green;
             }
@@ -83,7 +83,8 @@ namespace Stock_Market
             if (!stockMarketSellValue[index].text.Equals("0") && !stockMarketBuyInput[index].text.Equals("") &&
                 _stockChanged[index])
             {
-                var value = float.Parse(stockMarketSellValue[index].text);
+                var multiplier = float.Parse(stockMarketMultiplier[index].text);
+                var value = float.Parse(stockMarketSellValue[index].text) * multiplier;
                 var result = value + float.Parse(totalMoneyText.text);
                 totalMoneyText.text = Mathf.Round(result).ToString(CultureInfo.InvariantCulture);
                 stockMarketSellValue[index].text = "0";
