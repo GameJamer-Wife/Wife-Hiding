@@ -37,7 +37,7 @@ namespace MainScreen
             ringButton.interactable = false;
         }
 
-        private void CheckIfWin()
+        public void CheckIfWin()
         {
             if (paintingButton) 
                 Debug.Log("Painting button is still active, not completed yet.");
