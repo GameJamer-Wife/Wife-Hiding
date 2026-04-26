@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CuttingMinigame : SneakyMinigame
 {
@@ -12,8 +14,11 @@ public class CuttingMinigame : SneakyMinigame
     private bool cuttingLastTime = false;
     private bool flowerFresh = true;
     private int goal = 4;
+    [SerializeField] private Image flower;
+    [SerializeField] private List<Sprite> flowers = new List<Sprite>();
+    private static bool flowerChange = false;
 
-    
+
     private void Update()
     {
         float tuscany = Mathf.Sin(loopingNum * 2+(progress*0.5f));
@@ -48,10 +53,21 @@ public class CuttingMinigame : SneakyMinigame
             animaot.SetTrigger("ccc");
         }
 
+        if (flowerChange)
+        {
+            flowerChange = false;
+            flower.sprite = flowers[progress%flowers.Count];
+        }
+
     }
 
     public static void toggleCutting()
     {
         cutting = false;
+    }
+
+    public static void stemd()
+    {
+        flowerChange = true;
     }
 }
