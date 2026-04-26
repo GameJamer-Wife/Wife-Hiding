@@ -4726,7 +4726,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 358.9226, y: 0}
+  m_AnchoredPosition: {x: 370, y: 0}
   m_SizeDelta: {x: 293.0254, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &342636952559765863
@@ -5397,7 +5397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 358.9226, y: 0}
+  m_AnchoredPosition: {x: 370.00003, y: 0}
   m_SizeDelta: {x: 293.0254, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1491671279016346880
@@ -5591,10 +5591,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<color="red">Red <color="black"> = Can''t sell
-
-    <color="green">Green
-    <color="black"> = Can sell'
+  m_text: Sell when you hit a big multiplier!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5686,7 +5683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Wife.org Stock Change Since Last Update:'
+  m_text: 'Wife.org Stock Multiplier:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5811,7 +5808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238.17737, y: -156}
+  m_AnchoredPosition: {x: 249.25479, y: -130}
   m_SizeDelta: {x: 427.1801, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2366044295623988548
@@ -5850,8 +5847,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 130.16438, y: 395}
-  m_SizeDelta: {x: 376.7748, y: 79.9734}
+  m_AnchoredPosition: {x: 130.75209, y: 399.7}
+  m_SizeDelta: {x: 375.5993, y: 79.9734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2701878092591990747
 GameObject:
@@ -6237,7 +6234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your current value:'
+  m_text: 'Currently deposited:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7329,7 +7326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 236.64307, y: -143}
+  m_AnchoredPosition: {x: 247.72049, y: -117}
   m_SizeDelta: {x: 427.1801, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6165759177318134482
@@ -7424,7 +7421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your current value:'
+  m_text: 'Currently deposited:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8194,7 +8191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Knit INC. Stock Change Since Last Update:'
+  m_text: 'Knit INC. Stock Multiplier:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
