@@ -17,7 +17,12 @@ public class CuttingMinigame : SneakyMinigame
     [SerializeField] private Image flower;
     [SerializeField] private List<Sprite> flowers = new List<Sprite>();
     private static bool flowerChange = false;
+    [SerializeField] private GameObject sdfg;
 
+    private void Start()
+    {
+        sdfg.transform.position = basePos;
+    }
 
     private void Update()
     {
