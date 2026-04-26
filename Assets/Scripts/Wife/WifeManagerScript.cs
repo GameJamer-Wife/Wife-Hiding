@@ -32,9 +32,9 @@ namespace Wife
 
 
         private WifeSpawnPointScript _currentSpawnPoint;
-        private float tempMoveSpeed;
         private Vector2 _currentWanderTargetPosition;
         private Vector2 _wifeVelocity;
+        private float tempMoveSpeed;
 
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -82,7 +82,7 @@ namespace Wife
                             _currentSpawnPoint.spawnPoint.position,
                             _currentSpawnPoint.enterRotation);
                     }
-                    
+
                     UpdateWifePosition();
                     break;
                 case WifeStates.WalkingToSpawn:
@@ -123,11 +123,11 @@ namespace Wife
             var randomDirection = Random.insideUnitCircle.normalized;
             var randomDistance = Random.Range(0, maxWanderDistance) * screenSize.magnitude;
             _currentWanderTargetPosition = (Vector2)wifeImage.transform.position + randomDirection * randomDistance;
-            
-            var maxLeft = (Screen.width / 2 - wifeImage.rectTransform.rect.width / 2) - 20;
-            var maxRigt = (Screen.width / 2 + wifeImage.rectTransform.rect.width / 2) + 20;
+
+            var maxLeft = Screen.width / 2 - wifeImage.rectTransform.rect.width / 2 - 20;
+            var maxRigt = Screen.width / 2 + wifeImage.rectTransform.rect.width / 2 + 20;
             // Clamp to screen bounds
-            _currentWanderTargetPosition.x = Mathf.Clamp(screenSize.x /2, maxLeft, maxRigt);
+            _currentWanderTargetPosition.x = Mathf.Clamp(screenSize.x / 2, maxLeft, maxRigt);
             _currentWanderTargetPosition.y = wifeImage.transform.position.y;
 
             wanderCooldown = Random.Range(0.5f, 1f);
@@ -164,7 +164,7 @@ namespace Wife
                         tempMoveSpeed = wifeMaxMoveDistance * 2;
                     else
                         tempMoveSpeed = wifeMaxMoveDistance;
-                    
+
                     break;
                 default:
                     destination = Vector2.zero;

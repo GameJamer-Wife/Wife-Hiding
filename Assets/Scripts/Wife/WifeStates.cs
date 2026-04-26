@@ -1,6 +1,6 @@
 namespace Wife
 {
-   public enum WifeStates
+    public enum WifeStates
     {
         Offscreen,
         WalkingToTarget,

@@ -960,10 +960,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1840938760}
     m_Modifications:
+    - target: {fileID: 521498429644352412, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
+      propertyPath: startGameScript
+      value: 
+      objectReference: {fileID: 695830811}
     - target: {fileID: 1038560319681169459, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1542392705671726961, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
+      propertyPath: startGameScript
+      value: 
+      objectReference: {fileID: 695830811}
     - target: {fileID: 2558516087452851617, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1092,6 +1100,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8744085209340076931, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
+      propertyPath: startGameScript
+      value: 
+      objectReference: {fileID: 695830811}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1696,7 +1708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wifeObject: {fileID: 863672441}
-  gameOverManager: {fileID: 0}
+  gameOverManager: {fileID: 1294067814}
 --- !u!1 &1294067812
 GameObject:
   m_ObjectHideFlags: 0
