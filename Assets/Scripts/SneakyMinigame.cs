@@ -1,14 +1,15 @@
-using System;
 using MainScreen;
 using UnityEngine;
 
 public class SneakyMinigame : MonoBehaviour
 {
-    public static bool DoingSecretStuff = false;
-    protected int progress;
+    public static bool DoingSecretStuff;
+
+    [SerializeField] private StartGameScript startGameScript;
+    [SerializeField] private GameType gameType;
+
     private bool minigameWasActive;
-    [SerializeField]
-    private StartGameScript startGameScript;
+    protected int progress;
 
     private void OnEnable()
     {
@@ -23,22 +24,16 @@ public class SneakyMinigame : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (!minigameWasActive)
-        {
-            return;
-        }
+        if (!minigameWasActive) return;
 
         var startGameScript = FindObjectOfType<StartGameScript>();
-        if (startGameScript != null)
-        {
-            startGameScript.EndGame();
-        }
+        if (startGameScript != null) startGameScript.EndGame();
     }
 
     protected void EndMinigame()
     {
-            Destroy(gameObject);
-            startGameScript.EndGame();
-            DoingSecretStuff = false;
+        Destroy(gameObject);
+        startGameScript.EndAndDisableGame(gameType);
+        DoingSecretStuff = false;
     }
 }

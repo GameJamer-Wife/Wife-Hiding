@@ -9,6 +9,7 @@ namespace MainScreen
         Knitting,
         Flower
     }
+
     public class StartGameScript : MonoBehaviour
     {
         [SerializeField] private GameObject mainCanvas;
@@ -44,37 +45,74 @@ namespace MainScreen
             flowerButton.interactable = false;
         }
 
-        public void Endgame(GameType gameType)
+        public void EndAndDisableGame(GameType gameType)
         {
-            
+            switch (gameType)
+            {
+                case GameType.Painting:
+                    paintingGame.SetActive(false);
+                    paintingButton.interactable = false;
+                    
+                    paintingGame = null;
+                    paintingButton = null;
+                    
+                    break;
+                case GameType.Knitting:
+                    knittingGame.SetActive(false);
+                    knittingButton.interactable = false;
+
+                    knittingGame = null;
+                    knittingButton = null;
+                    break;
+                case GameType.Flower:
+                    flowerGame.SetActive(false);
+                    flowerButton.interactable = false;
+
+                    flowerGame = null;
+                    flowerButton = null;
+                    break;
+            }
+
+            isWindowOpen = false;
+            mainCanvas.SetActive(false);
         }
-        
+
         public void EndGame()
         {
             mainCanvas.SetActive(false);
-            paintingGame.SetActive(false);
-            knittingGame.SetActive(false);
-            flowerGame.SetActive(false);
+            if (paintingGame) 
+                paintingGame.SetActive(false);
+            if (knittingGame)
+                knittingGame.SetActive(false);
+            if (flowerGame)
+                flowerGame.SetActive(false);
+            
             isWindowOpen = false;
 
-            paintingButton.interactable = true;
-            knittingButton.interactable = true;
-            flowerButton.interactable = true;
+            if (paintingButton)
+                paintingButton.interactable = true;
+            if (knittingButton)
+                knittingButton.interactable = true;
+            if (flowerButton)
+                flowerButton.interactable = true;
         }
 
         public void StartPaintingGame()
         {
-            StartGame(paintingGame);
+            if (paintingGame)
+                StartGame(paintingGame);
         }
 
         public void StartKnittingGame()
         {
-            StartGame(knittingGame);
+            if (knittingGame)
+                StartGame(knittingGame);    
         }
 
         public void StartFlowerGame()
         {
-            StartGame(flowerGame);
+            if (flowerGame)
+                StartGame(flowerGame);
         }
     }
 }
