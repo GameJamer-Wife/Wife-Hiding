@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,19 +19,28 @@ namespace MainScreen
         [SerializeField] private GameObject paintingGame;
         [SerializeField] private GameObject knittingGame;
         [SerializeField] private GameObject flowerGame;
+        
 
         [SerializeField] private Button paintingButton;
         [SerializeField] private Button knittingButton;
         [SerializeField] private Button flowerButton;
-
-
+        [SerializeField] private Button ringButton;
+        
         [SerializeField] private bool isWindowOpen;
 
         private void Start()
         {
             mainCanvas.SetActive(false);
+            ringButton.interactable = false;
         }
 
+        private void CheckIfWin()
+        {
+            //if (!(!paintingButton && !knittingButton && !flowerButton)) return;
+            if (!ringButton.IsInteractable()) return;
+
+            Debug.Log("You win!");
+        }
 
         private void StartGame(GameObject game)
         {
@@ -71,10 +81,13 @@ namespace MainScreen
                     flowerGame = null;
                     flowerButton = null;
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(gameType), gameType, null);
             }
 
             isWindowOpen = false;
             mainCanvas.SetActive(false);
+            CheckIfWin();
         }
 
         public void EndGame()
@@ -95,6 +108,8 @@ namespace MainScreen
                 knittingButton.interactable = true;
             if (flowerButton)
                 flowerButton.interactable = true;
+
+            CheckIfWin();
         }
 
         public void StartPaintingGame()
@@ -113,6 +128,11 @@ namespace MainScreen
         {
             if (flowerGame)
                 StartGame(flowerGame);
+        }
+
+        public void BuyRing()
+        {
+            Debug.Log("Ring bought!");
         }
     }
 }
