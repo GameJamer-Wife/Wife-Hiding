@@ -10,7 +10,6 @@ public class coldot : MonoBehaviour
     public Vector2 guide;
     [SerializeField] private Vector2 offset;
     
-    [SerializeField] private Camera cam;
     [SerializeField] private RectTransform rect;
     public Color color;
 
