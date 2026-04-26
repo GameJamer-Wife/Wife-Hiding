@@ -52,7 +52,7 @@ namespace MainScreen
     
             Debug.Log("The ring is bought! You win!");
             
-            // TODO: add game
+            sceneLoad.LoadSceneStatic(2);
         }
 
         private void StartGame(GameObject game)
