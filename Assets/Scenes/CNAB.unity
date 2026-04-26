@@ -468,14 +468,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1567382702}
-    - target: {fileID: 559068584724107273, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d33954050f71a4e4c9e8634cc257da25, type: 3}
-    - target: {fileID: 624267068257557001, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 676669814569539167, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
       propertyPath: m_Name
       value: Knife
@@ -504,10 +496,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2753815489256971052, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d33954050f71a4e4c9e8634cc257da25, type: 3}
     - target: {fileID: 2801643148181454058, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
       propertyPath: cam
       value: 
@@ -524,10 +512,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1567382702}
-    - target: {fileID: 4882534996884154182, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d33954050f71a4e4c9e8634cc257da25, type: 3}
     - target: {fileID: 5429569053987196364, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
       propertyPath: cam
       value: 
@@ -536,14 +520,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1567382702}
-    - target: {fileID: 6271209791630675237, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6529406368937530427, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -90
-      objectReference: {fileID: 0}
     - target: {fileID: 6982337857213214032, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -624,10 +600,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7531710959041516049, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d33954050f71a4e4c9e8634cc257da25, type: 3}
     - target: {fileID: 7827791790653283535, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
       propertyPath: cam
       value: 
@@ -636,18 +608,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8085197759746940375, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -180
-      objectReference: {fileID: 0}
-    - target: {fileID: 8119596760129348631, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 8914082179593233653, guid: 00656abb34231dd4e908620c0e9a3c92, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d33954050f71a4e4c9e8634cc257da25, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
