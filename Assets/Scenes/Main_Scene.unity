@@ -2472,13 +2472,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1124aac71835ba38210e1d392628df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDuration: 10
+  timerDuration: 999999
   timerAudioSource: {fileID: 0}
   loweTimeSound: {fileID: 0}
   loweTimeSoundVolume: 0
   loweTimeThreshold: 25
   beepEvery: 1
   timerText: {fileID: 0}
+  gameOverShowScript: {fileID: 0}
 --- !u!1 &1273686501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,6 +2766,7 @@ MonoBehaviour:
   gameOverObject: {fileID: 1499020500}
   gameOverHeader: {fileID: 796135560}
   gameOverText: {fileID: 196418472}
+  timerGameObject: {fileID: 0}
 --- !u!1 &1398489971
 GameObject:
   m_ObjectHideFlags: 0
