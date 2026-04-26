@@ -93,13 +93,13 @@ namespace Stock_Market
 
         public void StockMarketTransferTo(int input)
         {
-            var insertMon = input;
-            totalMoneyText.text = insertMon.ToString();
+            totalMoneyText.text = input.ToString();
         }
 
-        public void StockMarketTransferFrom(int output)
+        public int StockMarketTransferFrom()
         {
-            output = int.Parse(totalMoneyText.text);
+            return int.Parse(totalMoneyText.text);
         }
+        
     }
 }

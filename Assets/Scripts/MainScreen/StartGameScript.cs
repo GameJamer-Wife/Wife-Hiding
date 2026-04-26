@@ -1,4 +1,6 @@
 using System;
+using Stock_Market;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +21,6 @@ namespace MainScreen
         [SerializeField] private GameObject paintingGame;
         [SerializeField] private GameObject knittingGame;
         [SerializeField] private GameObject flowerGame;
-        
 
         [SerializeField] private Button paintingButton;
         [SerializeField] private Button knittingButton;
@@ -27,6 +28,8 @@ namespace MainScreen
         [SerializeField] private Button ringButton;
         
         [SerializeField] private bool isWindowOpen;
+        [SerializeField] private StocksManagerScript  stockManager;
+        [SerializeField] private GameOverShowScript  gameOverManager;
 
         private void Start()
         {
@@ -34,12 +37,21 @@ namespace MainScreen
             ringButton.interactable = false;
         }
 
-        private void CheckIfWin()
+        public void CheckIfWin()
         {
-            //if (!(!paintingButton && !knittingButton && !flowerButton)) return;
-            if (!ringButton.IsInteractable()) return;
-
-            Debug.Log("You win!");
+            if (paintingButton) 
+                Debug.Log("Painting button is still active, not completed yet.");
+            if  (knittingButton)
+                Debug.Log("Knitting button is still active, not completed yet.");
+            if (flowerButton)
+                Debug.Log("Flower button is still active, not completed yet.");
+            
+            if (!(!paintingGame || !knittingGame || !flowerGame)) return;
+            Debug.Log("All minigames completed! Check if the ring is bought...");
+            if(!stockManager.theRingIsBought) return;
+    
+            Debug.Log("The ring is bought! You win!");
+            gameOverManager.ShowGameOver("Congratulations!", "You have successfully completed all the minigames and bought the ring! You win!");
         }
 
         private void StartGame(GameObject game)
@@ -129,10 +141,6 @@ namespace MainScreen
             if (flowerGame)
                 StartGame(flowerGame);
         }
-
-        public void BuyRing()
-        {
-            Debug.Log("Ring bought!");
-        }
+        
     }
 }
