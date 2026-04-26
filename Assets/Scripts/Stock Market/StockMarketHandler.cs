@@ -90,5 +90,16 @@ namespace Stock_Market
                 _soundEffectSource.Play();
             }
         }
+
+        public void StockMarketTransferTo(int input)
+        {
+            var insertMon = input;
+            totalMoneyText.text = insertMon.ToString();
+        }
+
+        public void StockMarketTransferFrom(int output)
+        {
+            output = int.Parse(totalMoneyText.text);
+        }
     }
 }
