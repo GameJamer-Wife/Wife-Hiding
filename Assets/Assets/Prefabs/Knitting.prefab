@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5930688044029772040}
   - component: {fileID: 126537735913008724}
   - component: {fileID: 6764472815809164250}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: KnitNeede 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 3870980498073871498}
   - component: {fileID: 7378011865442615023}
   - component: {fileID: 8286280652228263608}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Knit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 601817707123766198}
   - component: {fileID: 890592259503138387}
   - component: {fileID: 6581863580709624210}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: KnitNeede 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2665880632098137269}
   - component: {fileID: 284891373126550609}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Knitting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
