@@ -118,7 +118,7 @@ namespace Wife
                     Quaternion.Euler(0, _currentWanderTargetPosition.x > wifeImage.transform.position.x ? 0 : 180, 0));
                 return;
             }
-
+            /*
             var screenSize = new Vector2(Screen.width, Screen.height);
             var randomDirection = Random.insideUnitCircle.normalized;
             var randomDistance = Random.Range(0, maxWanderDistance) * screenSize.magnitude;
@@ -129,7 +129,8 @@ namespace Wife
             // Clamp to screen bounds
             _currentWanderTargetPosition.x = Mathf.Clamp(screenSize.x / 2, maxLeft, maxRigt);
             _currentWanderTargetPosition.y = wifeImage.transform.position.y;
-
+            
+            */
             wanderCooldown = Random.Range(0.5f, 1f);
         }
 
@@ -190,8 +191,8 @@ namespace Wife
                     break;
                 case WifeStates.WalkingToSpawn:
                     currentWifeState = WifeStates.Offscreen;
-                    timeUntilWife = Random.Range(5f, 10f);
-                    wifeWaitTime = Random.Range(1f, 3f);
+                    timeUntilWife = Random.Range(7f, 10f);
+                    wifeWaitTime = Random.Range(1f, 2f);
                     wifeImage.enabled = false;
                     _currentSpawnPoint.gameObject.SetActive(false);
                     _currentSpawnPoint = null;
