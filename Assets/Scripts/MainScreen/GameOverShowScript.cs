@@ -10,10 +10,11 @@ namespace MainScreen
         [SerializeField] private TextMeshProUGUI gameOverHeader;
         [SerializeField] private TextMeshProUGUI gameOverText;
 
+        [SerializeField] private GameObject timerGameObject;
+
         public static void RestartGame()
         {
-            var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
+            sceneLoad.LoadSceneStatic(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void ShowGameOver(string header, string text)
@@ -21,6 +22,8 @@ namespace MainScreen
             gameOverHeader.text = header;
             gameOverText.text = text;
             gameOverObject.SetActive(true);
+            
+            Destroy(timerGameObject);
         }
     }
 }

@@ -1,5 +1,7 @@
+using MainScreen;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Timer
 {
@@ -26,7 +28,10 @@ namespace Timer
         private TextMeshProUGUI timerText;
 
         private float _resetToTimer;
-        private float nextBeepTime;
+        private float _nextBeepTime;
+
+        [SerializeField]
+        private GameOverShowScript gameOverShowScript;
 
 
         private void Start()
@@ -36,6 +41,12 @@ namespace Timer
 
         private void LateUpdate()
         {
+            if (timerDuration <= 0)
+            {
+                gameOverShowScript.ShowGameOver("Time's up!", "You ran  out of time! Better luck next time.");
+                return;
+            }
+            
             if (_resetTimer)
             {
                 timerDuration = _resetToTimer;
@@ -49,6 +60,7 @@ namespace Timer
 
             timerText.text = ToTimerText(timerDuration);
             SoundTimer();
+
         }
 
         private static string ToTimerText(float time)
@@ -63,9 +75,9 @@ namespace Timer
         private void SoundTimer()
         {
             if (!(timerDuration <= loweTimeThreshold)) return;
-            if (timerDuration > nextBeepTime) return;
+            if (timerDuration > _nextBeepTime) return;
 
-            nextBeepTime = timerDuration - beepEvery;
+            _nextBeepTime = timerDuration - beepEvery;
             Debug.Log("Beep!");
             //timerAudioSource.PlayOneShot(loweTimeSound, loweTimeSoundVolume);
         }
