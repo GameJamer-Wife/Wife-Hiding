@@ -37,7 +37,7 @@ namespace MainScreen
             ringButton.interactable = false;
         }
 
-        public void CheckIfWin()
+        private void CheckIfWin()
         {
             if (paintingButton) 
                 Debug.Log("Painting button is still active, not completed yet.");
@@ -51,7 +51,8 @@ namespace MainScreen
             if(!stockManager.theRingIsBought) return;
     
             Debug.Log("The ring is bought! You win!");
-            gameOverManager.ShowGameOver("Congratulations!", "You have successfully completed all the minigames and bought the ring! You win!");
+            
+            // TODO: add game
         }
 
         private void StartGame(GameObject game)
